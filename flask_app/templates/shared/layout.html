@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title block that can be dynamically set in different pages -->
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Linking CSS for styling specific parts of the page layout -->
+    <link rel="stylesheet" href="../static/main/css/main.css">
+    <link rel="stylesheet" href="../static/main/css/header.css">
+    <link rel="stylesheet" href="../static/main/css/navbar.css">
+    <link rel="stylesheet" href="../static/main/css/footer.css">
+    
+    <!-- Blocks for adding extra CSS and other head elements in child templates -->
+    {% block extracss %}{% endblock %}
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Header section with a banner image -->
+    <header>
+        <img src="../static/main/images/banner.jpg" alt="Banner Image" loading="lazy">
+    </header>
+
+    <!-- Navigation bar -->
+    <nav>
+        <div class="left-nav">
+            <!-- Dynamically display user information or default text -->
+            {% if user == 'Unknown' %}
+            <h1>CSE 477 - Homework 3</h1>
+            {% else %}
+            <h1>Logged in as {{user}}</h1>
+            {% endif %}
+        </div>
+        <div class="right-nav">
+            <!-- Navigation links -->
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="../static/main/images/resume.jpg">Resume</a></li>
+                <li><a href="/chat">Chat</a></li>
+                {% if user == 'Unknown' %}
+                <li><a href="/login">Login</a></li>
+                {% else %}
+                <li><a href="/logout">Logout</a></li>
+                {% endif %}
+                
+                <!-- LinkedIn profile link -->
+                <li><a href="https://www.linkedin.com/" target="_blank"><img class="linkedin-icon" src="../static/main/images/social-linkedin.png" alt="LinkedIn" loading="lazy"></a></li>
+            </ul>
+        </div>
+
+        <!-- Menu icon for toggling visibility of navigation links on smaller screens -->
+        <div class="menu-icon" onclick="toggleNav()">
+            <img src="../static/main/images/menu-bar.png" class="menu-icon" alt="Menu" loading="lazy">
+        </div>
+        
+        <!-- Hidden navigation links, possibly for mobile view -->
+        <ul class="right-nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="../static/main/images/resume.jpg">Resume</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content section where child templates can inject content -->
+    <main>
+        {% block content %}{% endblock %}
+        
+        <!-- Button to toggle feedback form -->
+        <button id="toggle-feedback" onclick="toggleFeedback()">Feedback</button>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; Jungbum Cho</p>
+    </footer>
+
+    <!-- Additional scripts defined in child templates and the main navigation script -->
+    {% block extrajs %}{% endblock %}
+    {% block extra_scripts %}{% endblock %}
+    <script src="../static/main/js/main.js"></script>
+</body>
+</html>

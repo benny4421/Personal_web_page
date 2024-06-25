@@ -1,0 +1,36 @@
+
+{% extends 'shared/layout.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block nav_title %}Homework 2{% endblock %}
+
+{% block content %}
+<!-- Main Content Section -->
+<main>
+    <!-- Content Row -->
+    <div class="content-row">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img src="../static/main/images/photo.jpg" alt="Photo" loading="lazy">
+        </div>
+        <!-- Right Column -->
+        <div class="right-column">
+            <h2>Your Name</h2>
+            <p>My name is Jungbum Cho, and I'm thrilled to be here as an exchange student from Korea. I'm currently studying Computer science at Soongsil University, Seoul and I'm excited to immerse myself in the vibrant academic and cultural atmosphere here in the United States.
+
+                During my time here, I hope to learn not only from my courses but also from the diverse perspectives and experiences of my fellow students and professors. I'm passionate about analyzing data, and I'm looking forward to exploring new opportunities and making meaningful connections during my stay.
+                
+                Please feel free to reach out to me if you'd like to chat or if you have any questions about Korea or my experiences as an exchange student. I'm eager to learn, grow, and make the most of this incredible opportunity.
+                
+                Thank you!</p>
+        </div>
+    </div>
+    <!-- Fun Fact Section -->
+    <div class="fun-fact">
+        <hr />
+        <h2>A fun fact about me:</h2>
+        <p><b>{{fun_fact}}</b></p>
+    </div>
+</main>
+{% endblock %}

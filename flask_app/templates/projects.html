@@ -1,0 +1,39 @@
+
+
+ {% extends 'shared/layout.html' %}
+
+{% block title %}Projects Page{% endblock %}
+
+{% block nav_title %}Projects{% endblock %}
+
+{% block content %}
+<!-- Main Content Section -->
+<main>
+    <!-- Content Row -->
+    <div class="content-row">
+        <div class="single-column">
+            <h2>Below is a list of projects I worked on in CSE 477:</h2>
+            <p>Click an image, or hyperlink in the description to learn more.</p>
+        </div>
+    </div>
+    <!-- Content Row with Project Information -->
+    <div class="content-row">
+        <!-- Left Column with Image -->
+        <div class="left-column">
+            <a href="piano"><img src="../static/main/images/piano.jpeg" alt="Piano Image" class="img-border"></a>
+        </div>
+        <!-- Right Column with Project Details -->
+        <div class="right-column">
+            <h2>Javascript Piano</h2>
+            <p>As part of my first Homework assignment in CSE477, I developed an interactive piano built in pure HTML, CSS, and Javascript. This tool (in addition to my webpage) highlights my ability to build beautiful and mobile-friendly front-end applications. Click here to see and play!</p>
+            <a href="piano">Learn More</a>
+        </div>
+    </div>
+    <!-- Fun Fact Section -->
+    <div class="fun-fact">
+        <hr />
+        <h2>A fun fact about me:</h2>
+        <p>I love cherries.</p>
+    </div>
+</main>
+{% endblock %}

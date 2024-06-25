@@ -1,0 +1,99 @@
+nav {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-nav h1 {
+    margin: 0;
+}
+
+.right-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.right-nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.right-nav ul li a:hover {
+    opacity: 0.7;
+}
+
+.right-nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hidden */
+    position: absolute; /* Absolute positioning */
+    top: calc(100% + 20px); /* Positioned below the parent element + additional margin */
+    left: 0; /* Left alignment */
+    background-color: #333; /* Background color */
+    width: 100%; /* Full width */
+    height: calc(100vh - 20px); /* Full height of the browser window excluding 20px margin */
+    z-index: 999; /* Display above other elements */
+}
+
+.right-nav-list li {
+    display: block; /* Change to block element */
+    padding: 10px 20px; /* Set padding */
+    border-bottom: 1px solid white; /* Add border */
+}
+
+.right-nav-list li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.right-nav-list a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.right-nav-list a:hover {
+    opacity: 0.7;
+}
+
+.linkedin-icon {
+    width: 30px; /* Adjust width */
+    height: auto; /* Automatically adjust height */
+}
+
+.menu-icon {
+    width: 30px; /* Adjust width */
+    height: auto; /* Automatically adjust height */
+    display: none; /* Initially hidden */
+}
+
+@media screen and (max-width: 650px) {
+    .right-nav ul {
+        display: none; /* Hide navigation links below 650px */
+    }
+
+    .menu-icon {
+        display: block; /* Display menu icon below 650px */
+    }
+}
+
+/* Using media query to hide right-nav-list when screen width is greater than 650px */
+@media screen and (min-width: 650px) {
+    .right-nav-list {
+        display: none !important; /* Use !important to override previous display: block; */
+    }
+}
+
+nav {
+    position: relative; /* Set relative position for navigation menu */
+}

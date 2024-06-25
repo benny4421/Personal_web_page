@@ -1,0 +1,38 @@
+{% extends 'shared/layout.html' %} <!-- Extends a base layout template -->
+
+{% block title %}Login Page{% endblock %} <!-- Sets the page title to "Login Page" -->
+
+{% block content %} <!-- Defines the main content that will be dynamically inserted into the base layout -->
+<div class = "allMain">
+    <link rel="stylesheet" href="/static/main/css/login.css"> <!-- Link to external CSS file specific to the login page -->
+    <div class="mainContain">
+        <h3>Login</h3> <!-- Heading for the login section -->
+        <form>
+            <!-- Email input field with accessibility and usability enhancements -->
+            <p>Email:</p>
+            <input type="text" title="Please enter a valid email address." id="emailInput">
+            
+            <!-- Password input field with guidelines for input provided in the title attribute -->
+            <p>Password:</p>
+            <input type="password" title="Password must be at least 8 characters long." id="passwordInput">
+            
+            <!-- Submit button with an onclick event to trigger credential validation -->
+            <p></p>
+            <input type="button" title="Click to login" value="Submit" onclick="checkCredentials()" />
+        </form>
+
+        <!-- Conditional rendering based on authentication attempts -->
+        {% if attempt == 0 %}  
+            <p></p> <!-- Display nothing if no attempt has been made -->
+        {% else %}
+            <!-- Show an error message if there have been failed login attempts -->
+            <p id="authenticate">Authentication failure: {{attempt}}</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extrajs %} <!-- Block to include additional JavaScript files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/static/main/js/login.js"></script> <!-- Link to the external JavaScript file handling the login logic -->
+{% endblock %}

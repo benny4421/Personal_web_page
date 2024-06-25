@@ -1,0 +1,81 @@
+/* main.css */
+
+main {
+    padding: 20px;
+    text-align: center; /* Center all text */
+}
+
+.content-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 80vw;
+    margin: auto;
+}
+
+.left-column {
+    flex: 1;
+    max-width: 100%;
+}
+
+.left-column img {
+    width: 100%;
+    height: auto;
+}
+
+.right-column {
+    flex: 1;
+    padding-left: 20px;
+    overflow: visible;
+}
+
+.fun-fact {
+    margin-top: 20px;
+    text-align: center; /* Center text */
+}
+
+.img-border {
+    border: 2px solid black;
+}
+
+.feedback-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#toggle-feedback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-feedback:focus {
+    display: none;
+    /* outline: none; */
+}
+
+@media screen and (max-width: 650px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        width: 80vw; /* Set width for single column content */
+    }
+}
+
+/* main.css */

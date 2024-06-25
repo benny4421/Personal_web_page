@@ -1,0 +1,3 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","College/University","Michigan State University","College of Engineering","East Lansing","East Lansing","MI",NULL
+"2","College/University","Soongsil University",NULL,NULL,"Seoul","South Korea",NULL

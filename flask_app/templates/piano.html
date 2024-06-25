@@ -1,0 +1,53 @@
+
+{% extends 'shared/layout.html' %}
+
+{% block title %}Piano Project{% endblock %}
+
+{% block nav_title %}Piano{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="../static/main/css/piano.css">
+{% endblock %}
+
+{% block content %}
+<!-- Main Content Section -->
+<main>
+    <!-- Poem Section -->
+    <div class="poem">
+        <p>Behold piano great and old, its master slumbers in far-off cold,</p>
+        <p>If you wish to see anew, call out to it </p>
+        <p>- we see you.</p>
+        <hr />
+    </div>
+    <!-- Piano Image Section -->
+    <div class="wrapper">
+        <h2 class="great-old-one-title">The Great Old One</h2>
+        <ul class="piano-keys">
+            <!-- Piano Keys -->
+            <li class="key white" data-key="a"></li>
+            <li class="key black" data-key="w"></li>
+            <li class="key white" data-key="s"></li>
+            <li class="key black" data-key="e"></li>
+            <li class="key white" data-key="d"></li>
+            <li class="key white" data-key="f"></li>
+            <li class="key black" data-key="t"></li>
+            <li class="key white" data-key="g"></li>
+            <li class="key black" data-key="y"></li>
+            <li class="key white" data-key="h"></li>
+            <li class="key black" data-key="u"></li>
+            <li class="key white" data-key="j"></li>
+            <li class="key white" data-key="k"></li>
+            <li class="key black" data-key="o"></li>
+            <li class="key white" data-key="l"></li>
+            <li class="key black" data-key="p"></li>
+            <li class="key white" data-key=";"></li>
+            <!-- Remaining piano keys omitted for brevity -->
+        </ul>
+        <img src="../static/main/images/texture.jpeg" alt="Great Old One" class="great-old-one">
+    </div>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="../static/main/js/piano.js" defer></script>
+{% endblock %}

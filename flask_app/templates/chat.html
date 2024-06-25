@@ -1,0 +1,29 @@
+{% extends 'shared/layout.html' %} <!-- Extends a base layout template -->
+
+{% block title %}Chat page{% endblock %} <!-- Sets the title for the page -->
+
+{% block content %} <!-- Content block that will be dynamically inserted into the base layout -->
+<div class = "allMain">
+    <link rel="stylesheet" href="/static/main/css/chat.css"> <!-- Links to the external chat-specific CSS -->
+    <div class = "mainContain">
+        <p>Chat</p> <!-- Title for the chat section -->
+    </div>
+    <div id="mainText">
+        <div id='chat'> <!-- Container where chat messages will be displayed -->  
+        </div>
+    </div>
+    <div class = "mainContain">
+        <p class="message">
+            <!-- Input field for sending messages, with added title attribute for accessibility -->
+            <input type="text" id="text_box" title="Please enter a valid message type." placeholder="Enter Your Message Here" onkeypress="text_sub(event)" />
+        </p>
+        <button id="leaveChat" onclick="leave()">Leave Chat</button> <!-- Button to leave the chat -->
+    </div>
+</div>
+{% endblock %}
+
+{% block extrajs %} <!-- External JavaScript resources for the chat page -->
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery library -->
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script> <!-- Socket.IO library for real-time web applications -->
+<script src="/static/main/js/chat.js"></script> <!-- External chat functionality JavaScript -->
+{% endblock %}

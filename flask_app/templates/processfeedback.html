@@ -1,0 +1,21 @@
+{% extends 'shared/layout.html' %}
+
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block content %}
+
+    <h1>Feedback Received</h1>
+    <div class="feedback-container">
+        {% for feedback in feedback_data %}
+        <div class="feedback-item">
+            <p><strong>Name:</strong> {{ feedback.name }}</p>
+            <p><strong>Email:</strong> {{ feedback.email }}</p>
+            <p><strong>Comment:</strong> {{ feedback.comment }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="../static/main/js/main.js"></script>
+{% endblock %}
+
